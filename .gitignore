@@ -1,3 +1,4 @@
 data/
 .DS_Store
 .vscode
+code/__pycache__

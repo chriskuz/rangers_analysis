@@ -1,6 +1,6 @@
 class MoneyPuck:
     import json
-    with open("moneypuck_datadict.json", "r") as fp:
+    with open("code/moneypuck_datadict.json", "r") as fp:
         moneypuck_datadict = json.load(fp)
 
     @staticmethod

@@ -1,4 +1,4 @@
-import pandas as import pd
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -13,11 +13,14 @@ class MakePlot:
 
 # this is parent class
 class TaskAnalysis:
-    nonlocal taskvalue = [] # value of task chosen (int)
-    nonlocal credentialvalue = [] # values of inputted credentials (int ideally)
-    nonlocal categoryname = [] # player name or team name to be used for the plotting (string)
+    taskvalue = [] # value of task chosen (int)
+    credentialvalue = [] # values of inputted credentials (int ideally)
+    categoryname = [] # player name or team name to be used for the plotting (string)
 
     def __init__(self, whatdonumber):
+        self.taskvalue
+        self.credentialvalue
+        self.categoryname
         self.whatdonumber = whatdonumber # state of initial whatdo to then select the child classes
 
 
@@ -28,12 +31,22 @@ class TaskAnalysis:
 
 
 # This will be a child class from a parent that stores objects such as taskvalue and credentialvalue. taskvalue and credentialvalue will be used in conjunctio to create a serial number for the MakePlot funciton to run a plot. There may also be a playername/teamname string used for recognition and labeling. 
-class AnalyzePlayer:
-    print("Select a Task by inputting corresponding list integer?")
-    print("-----------------------")
-    print("1) Analyze Game-by-game Weighted Average Percentages Against Opposing Teams")
-    print("2) Analyze Game-by-game Percentages Over Time")
-    
+class AnalyzePlayer(TaskAnalysis):
+    # print("Select a Task by inputting corresponding list integer?")
+    # print("-----------------------")
+    # print("1) Analyze Game-by-game Weighted Average Percentages Against Opposing Teams")
+    # print("2) Analyze Game-by-game Percentages Over Time")
+
+    def __init__(self, whatdonumber):
+        self.whatdonumber = whatdonumber
+
+    def directions(self):
+        print("Select a Task by inputting corresponding list integer?")
+        print("-----------------------")
+        print("1) Analyze Game-by-game Weighted Average Percentages Against Opposing Teams")
+        print("2) Analyze Game-by-game Percentages Over Time")
+
+
 
     
 

@@ -11,10 +11,10 @@ class main:
     print("3) General Season Analysis" + "\n")
     print("4) Random" + "\n")
 
-    whatdonumber = input("Task Number Input: ")
+    whatdonumber = input("Task Number Input: ") # 
     
     if whatdonumber == 1:
-        pass
+        playerplotting.AnalyzePlayer(whatdonumber)
     elif whatdonumber == 2:
         pass
     elif whatdonumber == 3:

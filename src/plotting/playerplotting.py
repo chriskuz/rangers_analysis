@@ -10,17 +10,16 @@ class MakePlot:
 
 
 
-
 # this is parent class
 class TaskAnalysis:
-    taskvalue = [] # value of task chosen (int)
-    credentialvalue = [] # values of inputted credentials (int ideally)
-    categoryname = [] # player name or team name to be used for the plotting (string)
+
+    whatdonumber = 0 # class attribute for initial task number chosen
 
     def __init__(self):
-        self.taskvalue
-        self.credentialvalue
-        self.categoryname
+        self.taskvalue = 0 # child class' task selected
+        self.credentialvalue = [] #needed credential inputs selected based on task selection
+        self.categoryname = [] # player name or team name
+        self.serialnumber = []
         # self.whatdonumber = whatdonumber # state of initial whatdo to then select the child classes
 
 
@@ -108,3 +107,16 @@ class AnalyzePlayer(TaskAnalysis):
 #     plt.legend(framealpha = 1, frameon = True, fontsize = 18)
 #     #change plot color
 #     #plt.rcParams('figure.facecolor') = 'gray';
+
+
+
+def processtask(whatdonumber):
+    
+    if whatdonumber == 1:
+        AnalyzePlayer(whatdonumber)
+    elif whatdonumber == 2:
+        pass
+    elif whatdonumber == 3:
+        pass
+    elif whatdonumber == 4:
+        pass

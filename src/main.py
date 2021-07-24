@@ -11,17 +11,10 @@ class main:
     print("3) General Season Analysis" + "\n")
     print("4) Random" + "\n")
 
-    whatdonumber = input("Task Number Input: ") # 
-    
-    if whatdonumber == 1:
-        playerplotting.AnalyzePlayer(whatdonumber)
-    elif whatdonumber == 2:
-        pass
-    elif whatdonumber == 3:
-        pass
-    elif whatdonumber == 4:
-        pass
+    playerplotting.TaskAnalysis.whatdonumber = input("Task Number Input: ") 
+    playerplotting.processtask(playerplotting.TaskAnalysis.whatdonumber)
 
+    #to hide some of this code, we may create a "process task" method/class to store the if statement code to select where the task analysis method will continue
 
 
     def __init__(self):

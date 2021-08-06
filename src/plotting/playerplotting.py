@@ -37,7 +37,7 @@ class AnalyzePlayer(TaskAnalysis):
     print("2) Analyze Game-by-game Percentages Over Time")
 
     def __init__(self, whatdonumber):
-        self.whatdonumber = whatdonumber
+        TaskAnalysis.__init__(self, )
         # print("Select a Task by inputting corresponding list integer?")
         # print("-----------------------")
         # print("1) Analyze Game-by-game Weighted Average Percentages Against Opposing Teams")
@@ -113,7 +113,7 @@ class AnalyzePlayer(TaskAnalysis):
 def processtask(whatdonumber):
     
     if whatdonumber == 1:
-        AnalyzePlayer(whatdonumber)
+        AnalyzePlayer
     elif whatdonumber == 2:
         pass
     elif whatdonumber == 3:

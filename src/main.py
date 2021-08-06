@@ -16,6 +16,7 @@ class main:
 
     #to hide some of this code, we may create a "process task" method/class to store the if statement code to select where the task analysis method will continue
 
+    #the reason why this code may not be running the plotting script is because nothing here really says to run playerplotting.py. This might be where I would need a Make file for everything to communicate or unfortunately.....make this file really big and ugly. 
 
     def __init__(self):
         pass

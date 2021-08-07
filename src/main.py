@@ -1,4 +1,4 @@
-from plotting import playerplotting
+from plotting import taskprocessing
 
 class main:
     print("\n")
@@ -11,8 +11,8 @@ class main:
     print("3) General Season Analysis" + "\n")
     print("4) Random" + "\n")
 
-    playerplotting.TaskAnalysis.whatdonumber = input("Task Number Input: ") 
-    playerplotting.processtask(playerplotting.TaskAnalysis.whatdonumber)
+    taskprocessing.TaskAnalysis.whatdonumber = input("Task Number Input: ")
+    taskprocessing.processtask(taskprocessing.TaskAnalysis.whatdonumber)
 
     #to hide some of this code, we may create a "process task" method/class to store the if statement code to select where the task analysis method will continue
 

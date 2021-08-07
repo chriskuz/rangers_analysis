@@ -14,13 +14,15 @@ class MakePlot:
 class TaskAnalysis:
 
     whatdonumber = 0 # class attribute for initial task number chosen
+    
+    taskvalue = 0 # meant for child class' task selection 
+    credentialvalue = [] # meant for the credential input storage based on the child class' task selection
+    
+    categoryname = [] # player name or team name
+    serialnumber = [] # number used for the MakePlot command
 
     def __init__(self):
-        self.taskvalue = 0 # child class' task selected
-        self.credentialvalue = [] #needed credential inputs selected based on task selection
-        self.categoryname = [] # player name or team name
-        self.serialnumber = []
-        # self.whatdonumber = whatdonumber # state of initial whatdo to then select the child classes
+        pass
 
 
     def execute(self):
@@ -29,23 +31,35 @@ class TaskAnalysis:
     
 
 
-# This will be a child class from a parent that stores objects such as taskvalue and credentialvalue. taskvalue and credentialvalue will be used in conjunctio to create a serial number for the MakePlot funciton to run a plot. There may also be a playername/teamname string used for recognition and labeling. 
-class AnalyzePlayer(TaskAnalysis):
-    print("Select a Task by inputting corresponding list integer?")
-    print("-----------------------")
-    print("1) Analyze Game-by-game Weighted Average Percentages Against Opposing Teams")
-    print("2) Analyze Game-by-game Percentages Over Time")
 
-    def __init__(self, whatdonumber):
-        TaskAnalysis.__init__(self, )
-        # print("Select a Task by inputting corresponding list integer?")
-        # print("-----------------------")
-        # print("1) Analyze Game-by-game Weighted Average Percentages Against Opposing Teams")
-        # print("2) Analyze Game-by-game Percentages Over Time")
+
+# This will be a child class from a parent that stores objects such as taskvalue and credentialvalue. taskvalue and credentialvalue will be used in conjunction to create a serial number for the MakePlot funciton to run a plot. There may also be a playername/teamname string used for recognition and labeling. 
+class AnalyzePlayer(TaskAnalysis):
+
+    def __init__(self):
+        print("Select a Task by inputting corresponding list integer?")
+        print("-----------------------")
+        print("1) Analyze Game-by-game Weighted Average Percentages Against Opposing Teams")
+        print("2) Analyze Game-by-game Percentages Over Time")
+    
+    def defineplayer(self):
+        playername = input("What player do you want to analyze?: ")
 
 
 
     
+
+def processtask(whatdonumber):
+    if whatdonumber == 1:
+        return AnalyzePlayer()
+    elif whatdonumber == 2:
+        pass
+    elif whatdonumber == 3:
+        pass
+    elif whatdonumber == 4:
+        pass
+
+
 
 
 
@@ -110,13 +124,3 @@ class AnalyzePlayer(TaskAnalysis):
 
 
 
-def processtask(whatdonumber):
-    
-    if whatdonumber == 1:
-        AnalyzePlayer
-    elif whatdonumber == 2:
-        pass
-    elif whatdonumber == 3:
-        pass
-    elif whatdonumber == 4:
-        pass

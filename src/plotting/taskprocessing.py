@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 class MakePlot:
-    def __init__(self):
-        pass
+    def __init__(self, serialnumber):
+        self.serialnumber = serialnumber
     
     pass
 
@@ -18,11 +18,12 @@ class TaskAnalysis:
     taskvalue = 0 # meant for child class' task selection 
     credentialvalue = [] # meant for the credential input storage based on the child class' task selection
     
-    categoryname = [] # player name or team name
     serialnumber = [] # number used for the MakePlot command
 
-    def __init__(self):
-        pass
+    
+    # TODO: children classes will accept an instance variable for the category name
+    def __init__(self, categoryname):
+        self.categoryname = categoryname
 
 
     def execute(self):
@@ -36,8 +37,10 @@ class TaskAnalysis:
 # This will be a child class from a parent that stores objects such as taskvalue and credentialvalue. taskvalue and credentialvalue will be used in conjunction to create a serial number for the MakePlot funciton to run a plot. There may also be a playername/teamname string used for recognition and labeling. 
 class AnalyzePlayer(TaskAnalysis):
 
+    
+    # TODO: child class should accept an instance variable to operate of which player the person has chosen
     def __init__(self):
-        print("Select a Task by inputting corresponding list integer?")
+        print("Select a Task by inputting corresponding list integer: ")
         print("-----------------------")
         print("1) Analyze Game-by-game Weighted Average Percentages Against Opposing Teams")
         print("2) Analyze Game-by-game Percentages Over Time")
@@ -45,15 +48,40 @@ class AnalyzePlayer(TaskAnalysis):
     def defineplayer(self):
         playername = input("What player do you want to analyze?: ")
 
+    # TODO: offer player comparison analysis (consider funcitonality to scrape trusted sources for potential trade rumors to be more intuitive on comparison presentations)  
+
+class AnalyzeTeam(TaskAnalysis):
+
+    
+    # TODO: child class will have an input of category name upon instance creation
+    def __init__(self):
+        print("Select a task by inputting corresponding list integer: ")
+        print("-----------------------")
+        print("1) Analyze Seasonal Offensive Effect.")
+        print("2) Analyze Seasonal Defensive Effect.")
+        print("3) ")
+    
+    
+    def defineteam(self):
+        print("What team do you want to analyze?")
+
+    # TODO: offer scalable team comparison analysis
+
+class GeneralAnalysis(TaskAnalysis):
+
+    def __init__(self):
+        pass
 
 
     
 
 def processtask(whatdonumber):
     if whatdonumber == 1:
-        return AnalyzePlayer()
+        TaskAnalysis.categoryname = input("What player do you want to analyze?: ")
+        return AnalyzePlayer(TaskAnalysis.categoryname)
     elif whatdonumber == 2:
-        pass
+        TaskAnalysis.categoryname = input("What team do you want to analyze?: ")
+        return AnalyzeTeam(TaskAnalysis.categoryname)
     elif whatdonumber == 3:
         pass
     elif whatdonumber == 4:

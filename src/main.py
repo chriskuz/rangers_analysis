@@ -10,11 +10,10 @@ class main:
     print("2) Analyze Team" + "\n")
     print("3) General Season Analysis" + "\n")
     print("4) Random" + "\n")
+    print("5) Today" + "\n")
 
     taskprocessing.TaskAnalysis.whatdonumber = input("Task Number Input: ")
     taskprocessing.processtask(taskprocessing.TaskAnalysis.whatdonumber)
-
-    #to hide some of this code, we may create a "process task" method/class to store the if statement code to select where the task analysis method will continue
 
     #the reason why this code may not be running the plotting script is because nothing here really says to run playerplotting.py. This might be where I would need a Make file for everything to communicate or unfortunately.....make this file really big and ugly. 
 

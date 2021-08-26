@@ -3,8 +3,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 class MakePlot:
-    def __init__(self, serialnumber):
+    def __init__(self, serialnumber, credentialvalue):
         self.serialnumber = serialnumber
+        self.credentialvalue = credentialvalue
     
     pass
 
@@ -39,37 +40,58 @@ class AnalyzePlayer(TaskAnalysis):
 
     
     # TODO: child class should accept an instance variable to operate of which player the person has chosen
-    def __init__(self):
+    def __init__(self, categoryname):
+        self.categoryname = categoryname
+
         print("Select a Task by inputting corresponding list integer: ")
         print("-----------------------")
         print("1) Analyze Game-by-game Weighted Average Percentages Against Opposing Teams")
         print("2) Analyze Game-by-game Percentages Over Time")
-    
-    def defineplayer(self):
-        playername = input("What player do you want to analyze?: ")
+        
+        
+        print("Analyze Statistics Across Opponents")
+        print("Analyze Statistics Over Time")
 
     # TODO: offer player comparison analysis (consider funcitonality to scrape trusted sources for potential trade rumors to be more intuitive on comparison presentations)  
+
+    # TODO: offer statistics over time
+
+        # TODO: percentages over time, tangible impacts over time, shifts over time, different team categorical representations over time, 
+        
+        # TODO: provide overlay options
+
+    # TODO: offer statistics across opponents
+
+        #TODO: offer against league, against individual teams (specified), against most recent opponent, against upcoming opponent (next game, next week, next month), against divisions
 
 class AnalyzeTeam(TaskAnalysis):
 
     
     # TODO: child class will have an input of category name upon instance creation
-    def __init__(self):
+    def __init__(self, categoryname):
+        self.categoryname = categoryname
+
         print("Select a task by inputting corresponding list integer: ")
         print("-----------------------")
+
+        print("Analyze Statistics Over Time")
+        print("Analyze Statistics Across Opponenets")
+
+
         print("1) Analyze Seasonal Offensive Effect.")
         print("2) Analyze Seasonal Defensive Effect.")
-        print("3) ")
-    
-    
-    def defineteam(self):
-        print("What team do you want to analyze?")
+        print("3) Analyze ")
 
-    # TODO: offer scalable team comparison analysis
+    # TODO: 
 
 class GeneralAnalysis(TaskAnalysis):
 
     def __init__(self):
+        print("Display Current Seasonal Standings")
+        print("Display Best Offensive Numbers")
+        print("Display Best Defensive Numbers")
+        print("Display Best Goalie Numbers")
+        
         pass
 
 
@@ -83,72 +105,11 @@ def processtask(whatdonumber):
         TaskAnalysis.categoryname = input("What team do you want to analyze?: ")
         return AnalyzeTeam(TaskAnalysis.categoryname)
     elif whatdonumber == 3:
-        pass
+        return GeneralAnalysis("General Analysis")
     elif whatdonumber == 4:
         pass
-
-
-
-
-
-
-
-
-# def opposing_team_two_average_percentage_comparisons_barplot(data,year,situation,percentages,percentage_colors,graph_title,percentage_legend):
-#     #sets the year for the user
-#     if year:
-#         year_data = data[data['season'] == year]
-#     else:
-#         year_data = data
-
-    
-#     #filters the situation
-#     if situation:
-#         situation_data = year_data[year_data['situation'] == situation]
-#     else:
-#         situation_data = year_data
-
-#     #instantiates subplotting capabilities
-#     plt.subplots(figsize = (25,15))
-#     width = 0 #set the iterable widths outside of loop to be grown upon as more percentages are added
-    
-    
-#     #for a percentage in percentages
-#     for i, percentage in enumerate(percentages):
-#         spread = 0.25 #set the spread of bar graphs from one another
-
-#         #for the team in teams
-#         for j, team in enumerate(sorted(situation_data['opposingTeam'].unique())):
-#             team_matchup = situation_data[situation_data['opposingTeam'] == team]
-#             #get weighted average of the percentage for the team
-#             weighted_avg_percentage = np.average(team_matchup[percentage], weights = np.full(team_matchup.shape[0], team_matchup.shape[0]), axis = 0)
-
-#             #we need a condition to locate when to set the legend for what percentage
-#             if j == (len(situation_data['opposingTeam'].unique()) - 1):
-#                 #plot across the barplot with all that weighted percentage with an "j + width" where width = 0 for first pass through
-#                 plt.bar(j + width, weighted_avg_percentage, spread, alpha = 0.5, color = percentage_colors[i], label = percentage_legend[i])
-#             else: 
-#                 plt.bar(j + width, weighted_avg_percentage, spread, alpha = 0.5, color = percentage_colors[i])
-        
-#         #add 0.25 to width before iterating percentage for the next group of bars
-#         width = width + 0.25
-    
-#     #establish grid
-#     plt.grid(which = 'major', axis = 'both')
-#     #plot xticks
-#     plt.xticks(list(range(len(situation_data['opposingTeam'].unique()))), sorted(situation_data['opposingTeam'].unique()), rotation = 60, fontsize = 16)
-#     #plot yticks
-#     plt.yticks(fontsize = 16)
-#     #set xlabel
-#     plt.xlabel('Opposing Teams', fontsize = 18)
-#     #set ylabel
-#     plt.ylabel('Weighted Average Percentages', fontsize = 18)
-#     #set title
-#     plt.title(graph_title, fontsize = 20)
-#     #set legend
-#     plt.legend(framealpha = 1, frameon = True, fontsize = 18)
-#     #change plot color
-#     #plt.rcParams('figure.facecolor') = 'gray';
+    elif whatdonumber == 5:
+        pass
 
 
 

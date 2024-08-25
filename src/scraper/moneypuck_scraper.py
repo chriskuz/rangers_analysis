@@ -42,7 +42,7 @@ file_prefix = user_input.lower().replace(" ", "_")
 file_suffix = datetime.today().strftime("%Y_%m_%d")
 file_name = file_prefix + "_" + file_suffix
 
-storage_path = f"../../data/{file_name}"
+storage_path = f"../../data/{file_name}.parquet"
 
 df.to_parquet(storage_path, engine="fastparquet")
 
